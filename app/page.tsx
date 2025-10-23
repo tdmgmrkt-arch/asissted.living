@@ -109,7 +109,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10"></div>
         </div>
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-32">
-          <div className="max-w-3xl text-left">
+          <div className="max-w-4xl text-left">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight text-white [text-shadow:_0_1px_3px_rgb(0_0_0_/_50%)]">
               Compassionate Senior Living
               <br/>
@@ -140,18 +140,6 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ## Quote Section ## (No changes needed here) */}
-      <section className="py-24 md:py-32 bg-[#FDF8F2]/50 border-b border-gray-100/80">
-        {/* ... content ... */}
-         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Quote className="h-10 w-10 text-[#CD7B00]/20 mx-auto mb-6" />
-          <blockquote className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed italic font-serif">
-            "We toured three of their homes and found the perfect match for my father. The staff are incredible, and he's never been happier."
-          </blockquote>
-          <cite className="text-lg text-gray-500 not-italic">— Linda P., Daughter of Resident</cite>
         </div>
       </section>
 
