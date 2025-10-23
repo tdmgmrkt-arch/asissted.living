@@ -1,10 +1,6 @@
-/* Import Tailwind v4 layers */
-
-@plugin "tailwindcss-animate";
-@import "tailwindcss/preflight"; /* This replaces @tailwind base */
-@import "tailwindcss/utilities";
-
-@custom-variant dark (&:is(.dark *)); /* This replaces @tailwind components and @tailwind utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Your custom CSS variables */
 @layer base {
