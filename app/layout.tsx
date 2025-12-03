@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Assisted Living - Murrieta & Temecula",
   description: "Compassionate 6-bed assisted living homes in Murrieta and Temecula.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

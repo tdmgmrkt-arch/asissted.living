@@ -524,7 +524,7 @@ export default function MurrietaPage() {
           </li>
           <li className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-[#CD7B00]" />
-            <a href="mailto:info@yourcompany.com" className="hover:text-white">info@yourcompany.com</a>
+            <a href="mailto:ie@seniorcareauthority.com" className="hover:text-white">ie@seniorcareauthority.com</a>
           </li>
         </ul>
         
