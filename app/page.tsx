@@ -151,7 +151,7 @@ export default function App() {
             <Badge className="bg-[#CD7B00]/10 text-[#B56D00] border border-[#CD7B00]/20 mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
               About Our Network
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-gray-900 tracking-tight">Personalized Senior Living Across the Region</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-gray-900 tracking-tight">Personalized Senior Living Across the Inland Empire</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Our network offers flexibility to choose the right home based on lifestyle, care needs, and budget. Each location provides professional care, warmth, and peace of mind.
             </p>
