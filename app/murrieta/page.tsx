@@ -1,6 +1,8 @@
 "use client";
+import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
+import CalendarModal from '@/components/CalendarModal';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from '@/components/ui/badge';
@@ -63,9 +65,11 @@ const murrietaFaqs = [
 
 
 export default function MurrietaPage() {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-700 overflow-x-hidden antialiased">
+      <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
 
 {/* ## Header ## */}
       <header className="border-b border-gray-100/80 sticky top-0 bg-white/95 backdrop-blur-lg z-50 shadow-sm">
@@ -138,10 +142,11 @@ export default function MurrietaPage() {
       </nav>
 
       {/* Button */}
-      <Button asChild className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md shadow-[#CD7B00]/20 hover:shadow-lg hover:shadow-[#CD7B00]/30 transition-all duration-300 hover:-translate-y-px text-sm px-5 py-2.5 rounded-md">
-        <a href="#contact">
-          <span>Schedule Consultation</span>
-        </a>
+      <Button
+        onClick={() => setIsCalendarOpen(true)}
+        className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md shadow-[#CD7B00]/20 hover:shadow-lg hover:shadow-[#CD7B00]/30 transition-all duration-300 hover:-translate-y-px text-sm px-5 py-2.5 rounded-md"
+      >
+        Schedule Consultation
       </Button>
 
     </div>
@@ -177,9 +182,14 @@ export default function MurrietaPage() {
               <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
                  <a href="tel:###-###-####"><Phone className="mr-2 h-5 w-5" /> Call Now</a>
               </Button>
-              {/* Removed span wrapper, removed inline from icon */}
-              <Button asChild size="lg" variant="outline" className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-7 py-3 text-base rounded-md">
-                <a href="#contact"><Calendar className="mr-2 h-5 w-5" /> Schedule Consultation</a>
+              {/* Schedule Consultation Button */}
+              <Button
+                onClick={() => setIsCalendarOpen(true)}
+                size="lg"
+                variant="outline"
+                className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-7 py-3 text-base rounded-md"
+              >
+                <Calendar className="mr-2 h-5 w-5" /> Schedule Consultation
               </Button>
             </div>
         </div>
@@ -260,9 +270,13 @@ export default function MurrietaPage() {
             ))}
           </div>
            <div className="text-center mt-12">
-               {/* Removed span wrapper, removed inline from icon */}
-              <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
-                <a href="#contact"><Calendar className="mr-2 h-5 w-5"/> Schedule a Free Tour</a>
+               {/* Schedule a Free Tour Button */}
+              <Button
+                onClick={() => setIsCalendarOpen(true)}
+                size="lg"
+                className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md"
+              >
+                <Calendar className="mr-2 h-5 w-5"/> Schedule a Free Tour
               </Button>
            </div>
         </div>
@@ -414,15 +428,13 @@ export default function MurrietaPage() {
         ))}
       </div>
       <div className="text-center mt-16">
-        {/* Removed span wrapper, removed inline from icon */}
+        {/* Explore Your Options Button */}
         <Button
-          asChild
+          onClick={() => setIsCalendarOpen(true)}
           size="lg"
           className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md"
         >
-          <a href="#contact">
-            <Calendar className="mr-2 h-5 w-5" /> Explore Your Options Today
-          </a>
+          <Calendar className="mr-2 h-5 w-5" /> Explore Your Options Today
         </Button>
       </div>
     </div>
@@ -481,10 +493,14 @@ export default function MurrietaPage() {
               <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
                  <a href="tel:###-###-####"><Phone className="mr-2 h-5 w-5"/> Call Now</a>
               </Button>
-              {/* Removed span wrapper, removed inline from icon */}
-              <Button asChild size="lg" variant="outline" className="border-2 border-[#CD7B00] text-[#CD7B00] hover:bg-[#CD7B00]/5 transition-all duration-300 px-7 py-3 text-base rounded-md">
-                {/* Contact form was removed, link to general contact area */}
-                <a href="#contact"><Calendar className="mr-2 h-5 w-5"/> Schedule Consultation</a>
+              {/* Schedule Consultation Button */}
+              <Button
+                onClick={() => setIsCalendarOpen(true)}
+                size="lg"
+                variant="outline"
+                className="border-2 border-[#CD7B00] text-[#CD7B00] hover:bg-[#CD7B00]/5 transition-all duration-300 px-7 py-3 text-base rounded-md"
+              >
+                <Calendar className="mr-2 h-5 w-5"/> Schedule Consultation
               </Button>
             </div>
         </div>

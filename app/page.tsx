@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import CalendarModal from '@/components/CalendarModal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
@@ -11,8 +15,11 @@ import {
 import Link from 'next/link';
 
 export default function App() {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white text-gray-700 overflow-x-hidden antialiased">
+      <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
 
       {/* ## Header ## */}
       <header className="border-b border-gray-100/80 sticky top-0 bg-white/95 backdrop-blur-lg z-50 shadow-sm">
@@ -85,10 +92,11 @@ export default function App() {
             </nav>
 
             {/* Button */}
-            <Button asChild className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md shadow-[#CD7B00]/20 hover:shadow-lg hover:shadow-[#CD7B00]/30 transition-all duration-300 hover:-translate-y-px text-sm px-5 py-2.5 rounded-md">
-              <a href="#contact">
-                <span>Schedule Consultation</span>
-              </a>
+            <Button
+              onClick={() => setIsCalendarOpen(true)}
+              className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md shadow-[#CD7B00]/20 hover:shadow-lg hover:shadow-[#CD7B00]/30 transition-all duration-300 hover:-translate-y-px text-sm px-5 py-2.5 rounded-md"
+            >
+              Schedule Consultation
             </Button>
 
           </div>
@@ -123,9 +131,14 @@ export default function App() {
               <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-lg shadow-[#CD7B00]/30 hover:shadow-xl hover:shadow-[#CD7B00]/40 transition-all duration-300 hover:-translate-y-0.5 px-7 py-3 text-base rounded-md">
                  <a href="tel:9512999978"><span><Phone className="mr-2 h-5 w-5 inline" /> Call Now</span></a>
               </Button>
-              {/* Added span wrapper */}
-              <Button asChild size="lg" variant="outline" className="border-2 border-white/80 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-7 py-3 text-base backdrop-blur-sm bg-white/10 hover:bg-white/100 rounded-md">
-                <a href="#contact"><span><Calendar className="mr-2 h-5 w-5 inline" /> Schedule Consultation</span></a>
+              {/* Schedule Consultation Button */}
+              <Button
+                onClick={() => setIsCalendarOpen(true)}
+                size="lg"
+                variant="outline"
+                className="border-2 border-white/80 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-7 py-3 text-base backdrop-blur-sm bg-white/10 hover:bg-white/100 rounded-md"
+              >
+                <Calendar className="mr-2 h-5 w-5 inline" /> Schedule Consultation
               </Button>
             </div>
             {/* ... feature badges ... */}
@@ -459,9 +472,14 @@ export default function App() {
                 <Button size="lg" asChild className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md shadow-[#CD7B00]/20 hover:shadow-lg hover:shadow-[#CD7B00]/30 transition-all duration-300 hover:-translate-y-px px-7 py-3 text-base rounded-md">
                    <a href="tel:9512999978"><span><Phone className="mr-2 h-4 w-4 inline" /> Call Now</span></a>
                 </Button>
-                {/* Added span wrapper */}
-                <Button size="lg" asChild variant="outline" className="border-2 border-[#CD7B00] text-[#CD7B00] hover:bg-[#CD7B00]/5 transition-all duration-300 px-7 py-3 text-base rounded-md">
-                  <a href="#contact"><span><Calendar className="mr-2 h-4 w-4 inline" /> Schedule Consultation</span></a>
+                {/* Schedule Consultation Button */}
+                <Button
+                  onClick={() => setIsCalendarOpen(true)}
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-[#CD7B00] text-[#CD7B00] hover:bg-[#CD7B00]/5 transition-all duration-300 px-7 py-3 text-base rounded-md"
+                >
+                  <Calendar className="mr-2 h-4 w-4 inline" /> Schedule Consultation
                 </Button>
               </div>
             </div>
@@ -529,9 +547,14 @@ export default function App() {
             <Button size="lg" asChild className="bg-white text-[#B56D00] hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-px px-8 py-4 text-base font-semibold rounded-md">
               <a href="tel:9512999978"><span><Phone className="mr-2 h-5 w-5 inline" /> Call (951) 299-9978</span></a>
             </Button>
-            {/* Added span wrapper */}
-            <Button size="lg" asChild variant="outline" className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-8 py-4 text-base font-semibold rounded-md">
-               <a href="#contact"><span><Calendar className="mr-2 h-5 w-5 inline" /> Schedule Consultation Online</span></a>
+            {/* Schedule Consultation Button */}
+            <Button
+              onClick={() => setIsCalendarOpen(true)}
+              size="lg"
+              variant="outline"
+              className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-8 py-4 text-base font-semibold rounded-md"
+            >
+              <Calendar className="mr-2 h-5 w-5 inline" /> Schedule Consultation Online
             </Button>
           </div>
         </div>
