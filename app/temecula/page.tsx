@@ -77,11 +77,11 @@ export default function TemeculaPage() {
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
-          src="/senior-care-logo.jpg"
+          src="/senior-care-logo.webp"
           alt="Senior Care Logo"
-          width={140}
-          height={56}
-          className="h-12 w-auto"
+          width={180}
+          height={72}
+          className="h-14 w-auto"
           style={{ objectFit: 'contain' }}
           priority
         />
@@ -503,7 +503,7 @@ export default function TemeculaPage() {
       <div className="lg:col-span-2 space-y-5">
         <Link href="/" className="block">
           <Image
-            src="/footerlogo.png" // NOTE: Use a logo version that works on a dark BG
+            src="/senior-care-logo.webp" // NOTE: Use a logo version that works on a dark BG
             alt="Senior Care Logo"
             width={180}
             height={70}

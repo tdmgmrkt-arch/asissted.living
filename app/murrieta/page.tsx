@@ -79,11 +79,11 @@ export default function MurrietaPage() {
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
-          src="/senior-care-logo.jpg"
+          src="/senior-care-logo.webp"
           alt="Senior Care Logo"
-          width={140}
-          height={56}
-          className="h-12 w-auto"
+          width={180}
+          height={72}
+          className="h-14 w-auto"
           style={{ objectFit: 'contain' }}
           priority
         />
@@ -517,7 +517,7 @@ export default function MurrietaPage() {
       <div className="lg:col-span-2 space-y-5">
         <Link href="/" className="block">
           <Image
-            src="/footerlogo.png" // Using the same consistent logo
+            src="/senior-care-logo.webp" // Using the same consistent logo
             alt="Senior Care Logo"
             width={180}
             height={70}
