@@ -88,6 +88,7 @@ export default function App() {
               <a href="#team" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Team</a>
               <a href="#why-us" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Why Choose Us</a>
               <a href="#services" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Services</a>
+              <Link href="/blog" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Blog</Link>
               <a href="#contact" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Contact</a>
             </nav>
 
@@ -635,7 +636,7 @@ export default function App() {
                     <li><a href="#about" className="hover:text-white">About Us</a></li>
                     <li><a href="#team" className="hover:text-white">Our Team</a></li>
                     <li><a href="#services" className="hover:text-white">Services</a></li>
-                    <li><a href="#why-us" className="hover:text-white">Why Choose Us</a></li>
+                    <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
                     <li><a href="#contact" className="hover:text-white">Contact</a></li>
                   </ul>
                 </div>

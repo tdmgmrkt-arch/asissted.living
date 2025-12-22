@@ -138,6 +138,7 @@ export default function MurrietaPage() {
         <a href="#team" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Team</a>
         <a href="#why-us" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Why Choose Us</a>
         <a href="#services" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Services</a>
+        <Link href="/blog" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Blog</Link>
         <a href="#contact" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Contact</a>
       </nav>
 
@@ -581,6 +582,7 @@ export default function MurrietaPage() {
               <li><Link href="/#about" className="hover:text-white">About Us</Link></li>
               <li><Link href="/#team" className="hover:text-white">Our Team</Link></li>
               <li><Link href="/#services" className="hover:text-white">Services</Link></li>
+              <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               {/* CHANGED: Contact link now says Murrieta */}
               <li><Link href="#contact" className="hover:text-white">Contact Murrieta</Link></li>
             </ul>
