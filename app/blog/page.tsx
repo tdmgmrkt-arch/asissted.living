@@ -19,17 +19,23 @@ const POSTS_PER_PAGE = 6;
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; category?: string }>;
 }) {
   const params = await searchParams;
   const currentPage = Number(params.page) || 1;
+  const selectedCategory = params.category || null;
 
   const allPosts = getAllPosts();
   const categories = getAllCategories();
 
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  // Filter posts by category if one is selected
+  const filteredPosts = selectedCategory
+    ? allPosts.filter((post) => post.categories.includes(selectedCategory))
+    : allPosts;
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const posts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const posts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
     <div className="min-h-screen bg-white text-gray-700 overflow-x-hidden antialiased">
@@ -88,6 +94,8 @@ export default async function BlogPage({
 
               <Link href="/#homes" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Homes</Link>
               <Link href="/#team" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Team</Link>
+              <Link href="/#why-us" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Why Choose Us</Link>
+              <Link href="/#services" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Services</Link>
               <Link href="/blog" className="text-[#CD7B00] font-semibold">Blog</Link>
               <Link href="/#contact" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Contact</Link>
             </nav>
@@ -134,16 +142,27 @@ export default async function BlogPage({
         <section className="py-8 border-b border-gray-100/80 bg-white">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-3 justify-start">
-              <Badge className="bg-[#CD7B00] text-white border border-[#CD7B00] px-5 py-2 text-sm rounded-full">
-                All Posts
-              </Badge>
-              {categories.map((category) => (
-                <Badge
-                  key={category}
-                  className="bg-white text-gray-600 border border-gray-200 px-5 py-2 text-sm rounded-full cursor-pointer hover:border-[#CD7B00] hover:text-[#CD7B00] transition-colors"
-                >
-                  {category}
+              <Link href="/blog">
+                <Badge className={`px-5 py-2 text-sm rounded-full cursor-pointer transition-colors ${
+                  !selectedCategory
+                    ? 'bg-[#CD7B00] text-white border border-[#CD7B00]'
+                    : 'bg-white text-gray-600 border border-gray-200 hover:border-[#CD7B00] hover:text-[#CD7B00]'
+                }`}>
+                  All Posts
                 </Badge>
+              </Link>
+              {categories.map((category) => (
+                <Link key={category} href={`/blog?category=${encodeURIComponent(category)}`}>
+                  <Badge
+                    className={`px-5 py-2 text-sm rounded-full cursor-pointer transition-colors ${
+                      selectedCategory === category
+                        ? 'bg-[#CD7B00] text-white border border-[#CD7B00]'
+                        : 'bg-white text-gray-600 border border-gray-200 hover:border-[#CD7B00] hover:text-[#CD7B00]'
+                    }`}
+                  >
+                    {category}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>
@@ -167,7 +186,7 @@ export default async function BlogPage({
                   {/* Previous Button */}
                   {currentPage > 1 ? (
                     <Link
-                      href={`/blog?page=${currentPage - 1}`}
+                      href={`/blog?page=${currentPage - 1}${selectedCategory ? `&category=${encodeURIComponent(selectedCategory)}` : ''}`}
                       className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#CD7B00] transition-colors"
                     >
                       <ChevronLeft className="h-4 w-4" />
@@ -185,7 +204,7 @@ export default async function BlogPage({
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                       <Link
                         key={page}
-                        href={`/blog?page=${page}`}
+                        href={`/blog?page=${page}${selectedCategory ? `&category=${encodeURIComponent(selectedCategory)}` : ''}`}
                         className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
                           page === currentPage
                             ? 'bg-[#CD7B00] text-white'
@@ -200,7 +219,7 @@ export default async function BlogPage({
                   {/* Next Button */}
                   {currentPage < totalPages ? (
                     <Link
-                      href={`/blog?page=${currentPage + 1}`}
+                      href={`/blog?page=${currentPage + 1}${selectedCategory ? `&category=${encodeURIComponent(selectedCategory)}` : ''}`}
                       className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#CD7B00] transition-colors"
                     >
                       Next
@@ -217,7 +236,19 @@ export default async function BlogPage({
             </>
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-500 text-lg">No blog posts yet. Check back soon!</p>
+              <p className="text-gray-500 text-lg">
+                {selectedCategory
+                  ? `No posts found in "${selectedCategory}". Try another category.`
+                  : 'No blog posts yet. Check back soon!'}
+              </p>
+              {selectedCategory && (
+                <Link
+                  href="/blog"
+                  className="inline-block mt-4 text-[#CD7B00] hover:text-[#B56D00] font-medium transition-colors"
+                >
+                  View all posts
+                </Link>
+              )}
             </div>
           )}
         </div>

@@ -81,11 +81,29 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-// Get related posts by slugs
-export function getRelatedPosts(slugs: string[]): PostMeta[] {
-  return slugs
+// Get related posts by slugs (always returns 3, fills with recent posts if needed)
+export function getRelatedPosts(slugs: string[], currentSlug: string): PostMeta[] {
+  const TARGET_COUNT = 3;
+
+  // Get specified related posts
+  const relatedPosts = slugs
     .map((slug) => getPostMeta(slug))
     .filter((post): post is PostMeta => post !== null && post.published !== false);
+
+  // If we have enough, return the first 3
+  if (relatedPosts.length >= TARGET_COUNT) {
+    return relatedPosts.slice(0, TARGET_COUNT);
+  }
+
+  // Fill in with other recent posts
+  const allPosts = getAllPosts();
+  const existingSlugs = new Set([currentSlug, ...slugs]);
+
+  const fillPosts = allPosts
+    .filter((post) => !existingSlugs.has(post.slug))
+    .slice(0, TARGET_COUNT - relatedPosts.length);
+
+  return [...relatedPosts, ...fillPosts];
 }
 
 // Get all unique categories

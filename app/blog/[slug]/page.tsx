@@ -54,7 +54,7 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const relatedPosts = post.relatedSlugs ? getRelatedPosts(post.relatedSlugs) : [];
+  const relatedPosts = getRelatedPosts(post.relatedSlugs || [], slug);
 
   return (
     <div className="min-h-screen bg-white text-gray-700 overflow-x-hidden antialiased">
@@ -113,6 +113,8 @@ export default async function BlogPostPage({
 
               <Link href="/#homes" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Homes</Link>
               <Link href="/#team" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Our Team</Link>
+              <Link href="/#why-us" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Why Choose Us</Link>
+              <Link href="/#services" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Services</Link>
               <Link href="/blog" className="text-[#CD7B00] font-semibold">Blog</Link>
               <Link href="/#contact" className="text-gray-600 hover:text-[#CD7B00] transition-colors duration-200">Contact</Link>
             </nav>
