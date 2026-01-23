@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-// ... (Keep const definitions: teamMembers, murrietaHomes, etc. the same as before) ...
 const teamMembers = [
   {
     name: "Terrance D. Sims, CSA, CDP",
@@ -27,13 +26,13 @@ const teamMembers = [
     bio: "Jennifer brings clinical expertise and a passion for care coordination, working closely with residents and families."
   }
 ];
-const murrietaHomes = [
-  { title: "Classic Murrieta Homes", description: "Family-style settings for residents who prefer a cozy, close-knit environment with personalized attention." },
-  { title: "Premium Residences", description: "Spacious assisted living communities with modern amenities, landscaped gardens, and engaging activity programs." },
-  { title: "Memory Care Homes", description: "Secure and calming environments for seniors living with Alzheimer’s or dementia, staffed by trained caregivers." },
-  { title: "Independent Support Homes", description: "Great for active seniors seeking companionship, light care, and a social lifestyle." },
+const norcoHomes = [
+  { title: "Countryside Assisted Living", description: "Personalized daily support in a rural, peaceful setting with spacious rooms and country views." },
+  { title: "Ranch Memory Care", description: "Specialized dementia care utilizing Norco's calming environment for therapeutic benefits." },
+  { title: "Pastoral Respite Care", description: "Short-term care options allowing caregivers rest while loved ones enjoy country hospitality." },
+  { title: "Equestrian-Adjacent Living", description: "For seniors who appreciate Norco's horse culture, with opportunities to observe and enjoy equestrian life." },
 ];
-const murrietaServices = [
+const norcoServices = [
   "Personal assistance (bathing, dressing, grooming, mobility)",
   "Medication reminders and administration",
   "Three daily meals plus snacks",
@@ -41,30 +40,30 @@ const murrietaServices = [
   "Scheduled transportation",
   "Enrichment activities: games, music, fitness, and crafts",
 ];
-const whyChooseMurrieta = [
-  "Multiple licensed homes in Murrieta to match your care level and budget",
+const whyChooseNorco = [
+  "Peaceful country setting with open spaces and fresh air",
   "Low caregiver-to-resident ratios",
   "Transparent pricing — no hidden fees",
   "Licensed caregivers with background checks and ongoing training",
   "Warm, home-like environments instead of clinical facilities",
-  "Excellent reputation among local families and healthcare providers",
+  "Small-town community feel with close-knit neighbors",
 ];
-const murrietaTestimonials = [
-    { quote: "It truly feels like family here — my mom is safe, happy, and well cared for.", name: "Rachel S.", relation: "Murrieta Resident’s Daughter" },
-    { quote: "We visited several homes in Murrieta, but this network stood out immediately. The staff genuinely care about the residents.", name: "Tom L.", relation: "Murrieta" },
-    { quote: "They helped us find the perfect home for my dad — it was affordable and felt like home from the first day.", name: "Marianne G.", relation: "Daughter of Resident" }
+const norcoTestimonials = [
+    { quote: "My father grew up on a ranch and was miserable in a regular nursing home. Moving him to Norco was transformative — he loves the open air and the caregivers treat him like family.", name: "Barbara P.", relation: "Norco Resident's Daughter" },
+    { quote: "The peaceful atmosphere here has done wonders for my wife's anxiety. Norco's quiet streets and friendly neighbors have helped her find calm again.", name: "George M.", relation: "Norco" },
+    { quote: "We wanted somewhere that felt like home, not an institution. The care homes in Norco are exactly that — small, personal, and full of heart.", name: "Linda R.", relation: "Daughter of Resident" }
 ];
-const murrietaFaqs = [
-  { q: "How many assisted living homes do you have in Murrieta?", a: "We partner with several licensed residences throughout the city, each offering a unique setting, care level, and price point." },
+const norcoFaqs = [
+  { q: "How many assisted living homes do you have in Norco?", a: "We partner with several licensed residences throughout the city, each offering a unique setting, care level, and price point." },
   { q: "What is included in the monthly cost?", a: "Monthly rates typically include meals, personal care, housekeeping, and activities. Additional medical or memory care support can be added as needed." },
-  { q: "Can couples share a room?", a: "Yes, many of our Murrieta homes offer shared or adjoining suites for couples or siblings." },
-  { q: "How do I know which home is the best fit?", a: "During your free consultation, our care coordinator will assess your loved one’s needs and match them with homes that meet your family’s preferences and budget." },
-  { q: "What if my loved one’s health needs change?", a: "Our flexible network allows for seamless transitions between homes offering different levels of care — without the stress of starting over." },
+  { q: "Can couples share a room?", a: "Yes, many of our Norco homes offer shared or adjoining suites for couples or siblings." },
+  { q: "How do I know which home is the best fit?", a: "During your free consultation, our care coordinator will assess your loved one's needs and match them with homes that meet your family's preferences and budget." },
+  { q: "What if my loved one's health needs change?", a: "Our flexible network allows for seamless transitions between homes offering different levels of care — without the stress of starting over." },
   { q: "Are tours available?", a: "Yes! We encourage families to visit and experience our homes firsthand. Schedule a Free Tour or Call Now." },
 ];
 
 
-export default function MurrietaPage() {
+export default function NorcoPage() {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   return (
@@ -75,7 +74,7 @@ export default function MurrietaPage() {
       <header className="border-b border-gray-100/80 sticky top-0 bg-white/95 backdrop-blur-lg z-50 shadow-sm">
   <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between items-center h-20">
-      
+
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
@@ -97,16 +96,16 @@ export default function MurrietaPage() {
         <div className="relative group">
           <button className="flex items-center space-x-1 text-gray-600 hover:text-[#CD7B00] transition-colors duration-200 text-sm font-medium">
             <span>Locations</span>
-            <svg 
-              className="w-4 h-4 fill-current text-gray-400 group-hover:text-[#CD7B00] transition-colors duration-200" 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 20 20" 
+            <svg
+              className="w-4 h-4 fill-current text-gray-400 group-hover:text-[#CD7B00] transition-colors duration-200"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </button>
-          
+
           <div className="absolute left-1/2 -translate-x-1/2 mt-7 w-[560px] bg-white rounded-md shadow-lg pt-4 pb-3 px-5 z-20 hidden group-hover:block ring-1 ring-black ring-opacity-5 transition-all duration-300 opacity-0 group-hover:opacity-100 before:content-[''] before:absolute before:top-[-28px] before:left-0 before:right-0 before:h-[28px]">
             <div className="grid grid-cols-3 gap-x-6 gap-y-1">
               <Link href="/corona" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Corona</Link>
@@ -115,7 +114,7 @@ export default function MurrietaPage() {
               <Link href="/menifee" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Menifee</Link>
               <Link href="/moreno-valley" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Moreno Valley</Link>
               <Link href="/murrieta" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Murrieta</Link>
-              <Link href="/norco" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Norco</Link>
+              <Link href="/norco" className="block px-3 py-2 text-sm text-[#CD7B00] bg-gray-50 rounded whitespace-nowrap">Norco</Link>
               <Link href="/ontario" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Ontario</Link>
               <Link href="/palm-desert" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Palm Desert</Link>
               <Link href="/rancho-cucamonga" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Rancho Cucamonga</Link>
@@ -150,11 +149,10 @@ export default function MurrietaPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] md:min-h-[500px] flex items-center justify-center text-center overflow-hidden bg-gray-900">
-        {/* ... background image ... */}
         <div className="absolute inset-0">
           <Image
-            src="/temeculahero.webp" // Placeholder
-            alt="Scenic view representing Murrieta, CA"
+            src="/norcohero.webp"
+            alt="Scenic view representing Norco, CA"
             fill
             style={{ objectFit: 'cover' }}
             className="w-full h-full object-cover opacity-50"
@@ -164,20 +162,18 @@ export default function MurrietaPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
            <Badge className="bg-white/10 border border-white/20 text-white backdrop-blur-sm mb-4 px-3 py-1 font-medium tracking-wide text-sm rounded-full">
-              Assisted Living in Murrieta, CA
+              Assisted Living in Norco, CA
             </Badge>
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight text-white [text-shadow:_0_1px_3px_rgb(0_0_0_/_50%)]">
-            Where Comfort Meets Compassion
+            Country Living Senior Care
           </h1>
           <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto mb-8 [text-shadow:_0_1px_2px_rgb(0_0_0_/_40%)]">
-            Senior care you can trust. Our Murrieta communities balance independence, comfort, and 24-hour professional care to fit your family's needs and budget.
+            Experience the tranquility of assisted living in Norco, California's beloved Horse Town USA. Our communities blend peaceful country atmosphere with comprehensive support services.
           </p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* Removed span wrapper, removed inline from icon */}
               <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
-                 <a href="tel:###-###-####"><Phone className="mr-2 h-5 w-5" /> Call Now</a>
+                 <a href="tel:9512999978"><Phone className="mr-2 h-5 w-5" /> Call Now</a>
               </Button>
-              {/* Schedule Consultation Button */}
               <Button
                 onClick={() => setIsCalendarOpen(true)}
                 size="lg"
@@ -194,21 +190,20 @@ export default function MurrietaPage() {
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 md:gap-16 items-center">
           <div className="md:col-span-2">
-             {/* ... Badge, Heading, Text ... */}
              <Badge className="bg-[#CD7B00]/10 text-[#B56D00] border border-[#CD7B00]/20 mb-4 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
               Personalized Care
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">Personalized Assisted Living in Murrieta</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">Personalized Assisted Living in Norco</h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Every senior’s story is unique. Our network of licensed Murrieta homes offers flexible options for all levels of care, from light daily assistance to specialized memory care.
+              Norco is a one-of-a-kind community known for its equestrian heritage and rural charm. Our network of licensed Norco homes offers flexible options for all levels of care, from light daily assistance to specialized memory care.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Residents enjoy the comforts of home with the safety and support of experienced caregivers always nearby, making every day fulfilling.
+              Residents enjoy the comforts of home with the safety and support of experienced caregivers always nearby, making every day fulfilling in this peaceful country setting.
             </p>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">What Families Love:</h3>
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-600 mb-8 text-sm">
                 <ul className="space-y-2">
-                    <li className="flex items-start"><CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" /> Several home options for different budgets</li>
+                    <li className="flex items-start"><CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" /> Peaceful country setting with open spaces</li>
                     <li className="flex items-start"><CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" /> Private and semi-private rooms</li>
                     <li className="flex items-start"><CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" /> 24/7 professional staff & on-call nurses</li>
                     <li className="flex items-start"><CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" /> Home-cooked, nutritious meals daily</li>
@@ -221,15 +216,15 @@ export default function MurrietaPage() {
             </div>
              <Card className="bg-[#FDF8F2]/60 p-6 border border-gray-100/80 rounded-lg shadow-sm">
                 <blockquote className="text-gray-700 italic text-center md:text-left">
-                 "It truly feels like family here — my mom is safe, happy, and well cared for.”
-                 <cite className="block text-sm text-gray-500 not-italic mt-2">— Rachel S., Murrieta Resident’s Daughter</cite>
+                 "My father grew up on a ranch and was miserable in a regular nursing home. Moving him to Norco was transformative — he loves the open air."
+                 <cite className="block text-sm text-gray-500 not-italic mt-2">— Barbara P., Norco Resident's Daughter</cite>
                 </blockquote>
             </Card>
           </div>
           <div className="relative w-full h-80 md:h-[450px] rounded-xl overflow-hidden shadow-xl border border-gray-100/80">
             <Image
-              src="/caretaker.webp" // Placeholder
-              alt="Comfortable living space in a Murrieta assisted living home"
+              src="/norcopersonalizedcare.webp"
+              alt="Comfortable living space in a Norco assisted living home"
               fill
               style={{ objectFit: 'cover' }}
               className="transition-transform duration-500 hover:scale-105"
@@ -241,19 +236,17 @@ export default function MurrietaPage() {
        {/* Choose Homes Section */}
        <section id="homes" className="py-24 md:py-32 bg-[#FDF8F2]/50 border-y border-gray-100/80">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-           {/* ... Heading ... */}
            <div className="text-center mb-16">
             <Badge className="bg-white border border-[#CD7B00]/20 text-[#B56D00] mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
-              Our Murrieta Homes
+              Our Norco Homes
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">Choose From a Range of Homes in Murrieta</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">Choose From a Range of Homes in Norco</h2>
              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                Our local network features multiple care homes, each with its own character and atmosphere, ensuring the right fit for your loved one.
              </p>
           </div>
-           {/* ... Cards ... */}
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {murrietaHomes.map((home) => (
+            {norcoHomes.map((home) => (
               <Card key={home.title} className="bg-white p-6 shadow-lg border border-gray-100/80 rounded-xl text-center hover:shadow-xl transition-shadow duration-300 flex flex-col">
                 <CardHeader className="p-0 mb-3 flex-shrink-0">
                   <CardTitle className="text-xl font-semibold text-gray-800">{home.title}</CardTitle>
@@ -265,7 +258,6 @@ export default function MurrietaPage() {
             ))}
           </div>
            <div className="text-center mt-12">
-               {/* Schedule a Free Tour Button */}
               <Button
                 onClick={() => setIsCalendarOpen(true)}
                 size="lg"
@@ -279,7 +271,6 @@ export default function MurrietaPage() {
 
       {/* Meet Our Team Section */}
       <section id="team" className="py-24 md:py-32 bg-white">
-          {/* ... Content from previous version ... */}
            <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <Badge className="bg-[#CD7B00]/10 text-[#B56D00] border border-[#CD7B00]/20 mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
@@ -314,11 +305,11 @@ export default function MurrietaPage() {
       </section>
 
       {/* Care Plans Section */}
-      <section className="py-24 md:py-32 bg-[#FDF8F2]/50 border-t border-gray-100/80">
+      <section id="services" className="py-24 md:py-32 bg-[#FDF8F2]/50 border-t border-gray-100/80">
          <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-xl border border-gray-100/80 order-last md:order-first">
              <Image
-              src="/tailoredcare1.webp" // Placeholder
+              src="/norcoourservices.webp"
               alt="Caregiver assisting resident with daily activities"
               fill
               style={{ objectFit: 'cover' }}
@@ -335,16 +326,15 @@ export default function MurrietaPage() {
             </p>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Services Include:</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-600 mb-8 text-sm">
-               {murrietaServices.map(service => (
+               {norcoServices.map(service => (
                    <div key={service} className="flex items-start">
                        <CheckCircle2 className="h-4 w-4 text-[#CD7B00]/80 mr-2 mt-0.5 flex-shrink-0" />
                        {service}
                    </div>
                ))}
             </div>
-             {/* Removed span wrapper, removed inline from icon */}
              <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
-                <a href="tel:###-###-####"><Phone className="mr-2 h-5 w-5"/> Learn About Openings</a>
+                <a href="tel:9512999978"><Phone className="mr-2 h-5 w-5"/> Learn About Openings</a>
               </Button>
           </div>
         </div>
@@ -352,19 +342,18 @@ export default function MurrietaPage() {
 
        {/* Why Choose Us Section */}
        <section id="why-us" className="py-24 md:py-32 bg-white border-b border-gray-100/80">
-         {/* ... Content from previous version ... */}
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-[#CD7B00]/10 text-[#B56D00] border border-[#CD7B00]/20 mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
-              Why Choose Us in Murrieta
+              Why Choose Us in Norco
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">Peace of Mind for Families. Quality of Life for Residents.</h2>
              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-               Our locally owned and operated Murrieta homes mean personal care, local oversight, and a strong sense of community.
+               Our locally owned and operated Norco homes mean personal care, local oversight, and a strong sense of community.
              </p>
           </div>
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {whyChooseMurrieta.map((reason, index) => (
+                {whyChooseNorco.map((reason, index) => (
                    <Card key={index} className="bg-white p-6 shadow-lg border border-gray-100/80 rounded-xl">
                      <div className="flex items-start gap-4">
                        <div className="h-10 w-10 bg-[#FDF8F2] rounded-lg flex items-center justify-center flex-shrink-0 border border-gray-100/80 mt-1">
@@ -379,11 +368,10 @@ export default function MurrietaPage() {
       </section>
 
       {/* Testimonials Section */}
-      {/* Testimonials Section */}
   <section
     id="testimonials"
     className="relative py-24 md:py-32 border-b border-gray-100/80 bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: "url('/testimonialsbackmurrieta.webp')" }}
+    style={{ backgroundImage: "url('/norcotestimonials.webp')" }}
   >
     {/* Overlay */}
     <div
@@ -398,11 +386,11 @@ export default function MurrietaPage() {
           Testimonials
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">
-          Hear From Murrieta Families
+          Hear From Norco Families
         </h2>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {murrietaTestimonials.map((item, index) => (
+        {norcoTestimonials.map((item, index) => (
           <Card
             key={index}
             className="bg-white p-8 shadow-xl border border-gray-100/80 rounded-xl"
@@ -423,7 +411,6 @@ export default function MurrietaPage() {
         ))}
       </div>
       <div className="text-center mt-16">
-        {/* Explore Your Options Button */}
         <Button
           onClick={() => setIsCalendarOpen(true)}
           size="lg"
@@ -437,7 +424,6 @@ export default function MurrietaPage() {
 
       {/* FAQ Section */}
        <section id="faq" className="py-24 md:py-32 bg-white border-b border-gray-100/80">
-         {/* ... Content from previous version ... */}
            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-[#CD7B00]/10 text-[#B56D00] border border-[#CD7B00]/20 mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
@@ -445,11 +431,11 @@ export default function MurrietaPage() {
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Answers about our assisted living options in Murrieta.
+              Answers about our assisted living options in Norco.
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
-            {murrietaFaqs.map((faq, index) => (
+            {norcoFaqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index + 1}`} className="bg-white border border-gray-200/80 rounded-lg px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-[#CD7B00]/40 data-[state=open]:shadow-lg">
                 <AccordionTrigger className="hover:text-[#CD7B00] py-4 transition-colors text-left text-base font-medium text-gray-800 data-[state=open]:text-[#CD7B00] hover:no-underline [&[data-state=open]>svg]:text-[#CD7B00]">
                   {faq.q}
@@ -460,7 +446,7 @@ export default function MurrietaPage() {
                           {faq.a.split("Schedule a Free Tour")[0]}
                           <a href="#contact" className="text-[#CD7B00] font-medium hover:underline">Schedule a Free Tour</a>
                           {faq.a.split("Call Now")[1] ? ' or ' : '.'}
-                          {faq.a.includes("Call Now") && <a href="tel:###-###-####" className="text-[#CD7B00] font-medium hover:underline">Call Now</a>}
+                          {faq.a.includes("Call Now") && <a href="tel:9512999978" className="text-[#CD7B00] font-medium hover:underline">Call Now</a>}
                           {faq.a.includes("Call Now") && '.'}
                       </>
                   ) : (
@@ -477,18 +463,16 @@ export default function MurrietaPage() {
        <section id="contact" className="py-24 md:py-32 bg-[#FDF8F2]/50 border-b border-gray-100/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge className="bg-white border border-[#CD7B00]/20 text-[#B56D00] mb-6 px-4 py-1 font-medium tracking-wide text-sm rounded-full">
-               Find Care in Murrieta
+               Find Care in Norco
             </Badge>
-           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">Find the Right Assisted Living Home in Murrieta, CA</h2>
+           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">Find the Right Assisted Living Home in Norco, CA</h2>
            <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-             Your loved one deserves compassionate care and a comfortable place to call home. Let us help you explore options and find a community that feels just right.
+             Your loved one deserves compassionate care and a comfortable place to call home in Norco's peaceful country setting. Let us help you explore options and find a community that feels just right.
            </p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* Removed span wrapper, removed inline from icon */}
               <Button asChild size="lg" className="bg-[#CD7B00] hover:bg-[#B56D00] text-white shadow-md hover:shadow-lg transition-shadow duration-300 px-7 py-3 text-base rounded-md">
-                 <a href="tel:###-###-####"><Phone className="mr-2 h-5 w-5"/> Call Now</a>
+                 <a href="tel:9512999978"><Phone className="mr-2 h-5 w-5"/> Call Now</a>
               </Button>
-              {/* Schedule Consultation Button */}
               <Button
                 onClick={() => setIsCalendarOpen(true)}
                 size="lg"
@@ -504,15 +488,15 @@ export default function MurrietaPage() {
       {/* Footer */}
       <footer className="bg-gray-800 text-gray-300 pt-16 pb-12">
   <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     {/* Top Grid: 5-column "Brand + Utility" layout */}
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-      
+
       {/* === COLUMN 1: BRAND BLOCK (Spans 2 columns) === */}
       <div className="lg:col-span-2 space-y-5">
         <Link href="/" className="block">
           <Image
-            src="/senior-care-logo.webp" // Using the same consistent logo
+            src="/senior-care-logo.webp"
             alt="Senior Care Logo"
             width={180}
             height={70}
@@ -520,26 +504,26 @@ export default function MurrietaPage() {
             style={{ objectFit: "contain" }}
           />
         </Link>
-        
-        {/* Serving Area (UPDATED from your old footer) */}
+
+        {/* Serving Area */}
         <div className="flex items-start gap-2 text-gray-400 text-sm">
           <MapPin className="h-4 w-4 text-[#CD7B00] mt-0.5 flex-shrink-0" />
-          <span>Serving Murrieta, Temecula, Wildomar, Menifee, Winchester, Canyon Lake</span>
+          <span>Serving Norco, Corona, Riverside, Eastvale, and surrounding areas</span>
         </div>
 
         {/* Primary Contact */}
         <ul className="space-y-3 text-sm">
           <li className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-[#CD7B00]" />
-            <a href="tel:###-###-####" className="hover:text-white"> (951) 299-9962</a>
+            <a href="tel:9512999978" className="hover:text-white">(951) 299-9978</a>
           </li>
           <li className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-[#CD7B00]" />
             <a href="mailto:ie@seniorcareauthority.com" className="hover:text-white">ie@seniorcareauthority.com</a>
           </li>
         </ul>
-        
-        {/* Social Icons (Placeholder) */}
+
+        {/* Social Icons */}
         <div className="flex items-center space-x-4 pt-2">
           <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-white">
             <Facebook className="h-5 w-5" />
@@ -556,19 +540,18 @@ export default function MurrietaPage() {
       {/* === COLUMN 2: UTILITY BLOCK (Spans 3 columns) === */}
       <div className="lg:col-span-3">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
-          
-          {/* List 1: Our Homes (HIGHLIGHT CHANGED) */}
+
+          {/* List 1: Our Homes */}
           <div>
             <h4 className="text-white mb-4 font-semibold text-sm tracking-wide uppercase">Our Homes</h4>
             <ul className="space-y-2 leading-relaxed">
-              {/* CHANGED: Highlight is now on Murrieta */}
-              <li><Link href="/murrieta" className="text-[#CD7B00] font-medium hover:text-white">Murrieta Location</Link></li>
+              <li><Link href="/norco" className="text-[#CD7B00] font-medium hover:text-white">Norco Location</Link></li>
+              <li><Link href="/murrieta" className="hover:text-white">Murrieta Location</Link></li>
               <li><Link href="/temecula" className="hover:text-white">Temecula Location</Link></li>
-              <li><Link href="/#homes" className="hover:text-white">Home Types Overview</Link></li>
             </ul>
           </div>
 
-          {/* List 2: Quick Links (UPDATED "Contact" link) */}
+          {/* List 2: Quick Links */}
           <div>
             <h4 className="text-white mb-4 font-semibold text-sm tracking-wide uppercase">Quick Links</h4>
             <ul className="space-y-2 leading-relaxed">
@@ -577,35 +560,33 @@ export default function MurrietaPage() {
               <li><Link href="/#team" className="hover:text-white">Our Team</Link></li>
               <li><Link href="/#services" className="hover:text-white">Services</Link></li>
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
-              {/* CHANGED: Contact link now says Murrieta */}
-              <li><Link href="#contact" className="hover:text-white">Contact Murrieta</Link></li>
+              <li><Link href="#contact" className="hover:text-white">Contact Norco</Link></li>
             </ul>
           </div>
-          
-          {/* List 3: Business Hours (Content from old footer) */}
+
+          {/* List 3: Business Hours */}
           <div>
             <h4 className="text-white mb-4 font-semibold text-sm tracking-wide uppercase">Business Hours</h4>
             <div className="grid grid-cols-[max-content_1fr] gap-x-3 gap-y-2 leading-relaxed">
-              {/* This content is based on your old footer's first column */}
               <span>Mon–Fri</span>
               <span className="text-gray-400 font-medium text-right">9 AM – 6 PM</span>
-              
+
               <span>Saturday</span>
               <span className="text-gray-400 font-medium text-right">By Appointment</span>
-              
+
               <span>Sunday</span>
               <span className="text-gray-400 font-medium text-right">Closed</span>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
 
-    {/* === BOTTOM SECTION (Re-styled for Dark Mode) === */}
+    {/* === BOTTOM SECTION === */}
     <div className="border-t border-gray-700 mt-16 pt-10">
-      
-      {/* Feature Badges (UPDATED from your old footer) */}
+
+      {/* Feature Badges */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-gray-400 flex-wrap mb-6">
         <div className="flex items-center gap-2">
           <CheckCircle2 className="h-3.5 w-3.5 text-green-500" />
@@ -618,8 +599,7 @@ export default function MurrietaPage() {
         </div>
         <div className="hidden sm:block w-px h-4 bg-gray-600" />
         <div className="flex items-center gap-2">
-          {/* Using the Heart icon from your old footer */}
-          <Heart className="h-3.5 w-3.5 text-red-500" /> 
+          <Heart className="h-3.5 w-3.5 text-red-500" />
           <span>Locally Owned & Operated</span>
         </div>
         <div className="hidden sm:block w-px h-4 bg-gray-600" />
@@ -629,12 +609,10 @@ export default function MurrietaPage() {
         </div>
       </div>
 
-      {/* Copyright / Legal Links (UPDATED) */}
+      {/* Copyright / Legal Links */}
       <div className="text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-        {/* CHANGED: Copyright now says Murrieta */}
-        <p>© {new Date().getFullYear()} Assisted Living - Murrieta. All rights reserved. License # [Your License Number Here].</p>
-        
-        {/* These links came from your old footer's 4th column */}
+        <p>© {new Date().getFullYear()} Assisted Living - Norco. All rights reserved.</p>
+
         <div className="flex items-center gap-3">
           <Link href="#" className="text-gray-400 hover:text-white">Privacy Policy</Link>
           <span className="w-px h-3 bg-gray-600" />

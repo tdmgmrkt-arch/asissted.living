@@ -76,19 +76,23 @@ export default async function BlogPage({
                   </svg>
                 </button>
 
-                <div className="absolute left-1/2 -translate-x-1/2 mt-0 w-40 bg-white rounded-md shadow-lg pt-3 pb-1 z-20 hidden group-hover:block ring-1 ring-black ring-opacity-5 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                  <Link
-                    href="/murrieta"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] transition-colors duration-150"
-                  >
-                    Murrieta
-                  </Link>
-                  <Link
-                    href="/temecula"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] transition-colors duration-150"
-                  >
-                    Temecula
-                  </Link>
+                <div className="absolute left-1/2 -translate-x-1/2 mt-7 w-[560px] bg-white rounded-md shadow-lg pt-4 pb-3 px-5 z-20 hidden group-hover:block ring-1 ring-black ring-opacity-5 transition-all duration-300 opacity-0 group-hover:opacity-100 before:content-[''] before:absolute before:top-[-28px] before:left-0 before:right-0 before:h-[28px]">
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+                    <Link href="/corona" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Corona</Link>
+                    <Link href="/fontana" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Fontana</Link>
+                    <Link href="/indio" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Indio</Link>
+                    <Link href="/menifee" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Menifee</Link>
+                    <Link href="/moreno-valley" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Moreno Valley</Link>
+                    <Link href="/murrieta" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Murrieta</Link>
+                    <Link href="/norco" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Norco</Link>
+                    <Link href="/ontario" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Ontario</Link>
+                    <Link href="/palm-desert" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Palm Desert</Link>
+                    <Link href="/rancho-cucamonga" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Rancho Cucamonga</Link>
+                    <Link href="/rialto" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Rialto</Link>
+                    <Link href="/riverside" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Riverside</Link>
+                    <Link href="/san-bernardino" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">San Bernardino</Link>
+                    <Link href="/temecula" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#CD7B00] rounded transition-colors duration-150 whitespace-nowrap">Temecula</Link>
+                  </div>
                 </div>
               </div>
 
